@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Deep Dark Mode - Trushank Mistry Style */
+    --background: 0 0% 3%; /* #080808 - Deep dark background */
+    --foreground: 0 0% 88%; /* #E0E0E0 - Light text */
+    --card: 0 0% 5% / 0.6; /* Glassmorphism cards with dark background */
+    --card-foreground: 0 0% 88%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 88%;
+    
+    /* Primary: Emerald Green (Trushank Mistry style) */
+    --primary: 142 76% 36%; /* #10B981 - Emerald green */
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary: Light Green */
+    --secondary: 142 70% 50%; /* #34D399 - Light green */
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Muted: Dark gray */
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 65%; /* Muted text */
+    
+    /* Accent: Deep Iris */
+    --accent: 258 65% 50%; /* #5D3FD3 */
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Borders: Dark gray with subtle glow */
+    --border: 0 0% 15%; /* Dark borders */
+    --input: 0 0% 15%;
+    --ring: 142 76% 36%; /* Emerald green ring */
+    
+    /* Border radius: 8-12px range */
+    --radius: 0.5rem; /* 8px */
+    --priority-high: 0 84.2% 60.2%;
+    --priority-medium: 38 92% 50%;
+    --priority-low: 142 76% 36%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 250 95% 60%;
+
+    /* Premium shadows with glassmorphism */
+    --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.04);
+    --shadow-medium: 0 8px 16px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.06);
+    --shadow-large: 0 16px 32px rgba(0, 0, 0, 0.12), 0 8px 16px rgba(0, 0, 0, 0.08);
+    --shadow-button: 0 4px 12px rgba(124, 58, 237, 0.2);
+    --shadow-button-hover: 0 8px 20px rgba(124, 58, 237, 0.3), 0 4px 8px rgba(124, 58, 237, 0.2);
+    --shadow-glow: 0 0 20px rgba(124, 58, 237, 0.15);
+    
+    /* Subtle gradients */
+    --gradient-primary: linear-gradient(135deg, #F8F9FC 0%, #F0F4F8 100%);
+    --gradient-secondary: linear-gradient(135deg, #FFFFFF 0%, #F8F9FC 100%);
+    --gradient-purple: linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%);
+    --gradient-blue: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+    --priority-high: 0 72.2% 50.6%;
+    --priority-medium: 38 92% 50%;
+    --priority-low: 142 71% 45%;
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply text-foreground;
+    /* Inter font - Trushank Mistry style */
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+    color: #E0E0E0;
+    font-weight: 400;
+    /* Deep dark background */
+    background: #080808;
+    min-height: 100vh;
+    position: relative;
+  }
+  
+  /* High-contrast heading typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: #E0E0E0; /* Light text for dark mode */
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+  
+  /* Ensure root container is transparent to show body gradient */
+  #root {
+    background: transparent;
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Typography Scale - Clear hierarchy */
+  h1 {
+    font-size: 3rem; /* 48px */
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+  }
+  
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 3.5rem; /* 56px on md+ */
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    h1 {
+      font-size: 4rem; /* 64px on lg+ */
+    }
+  }
+  
+  h2 {
+    font-size: 2.5rem; /* 40px */
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  
+  h3 {
+    font-size: 1.875rem; /* 30px */
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  
+  h4 {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  
+  /* Spacing: 8pt grid (8px, 16px, 24px, 32px, 40px, 48px, 64px, 80px, 96px) */
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Smooth scrolling with camera-like transitions */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Smooth section transitions */
+section {
+  scroll-margin-top: 80px;
+  transition: transform 0.3s ease-out;
+}
+
+/* Minimal scrollbar with gradient */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #10B981, #34D399);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #059669, #10B981);
+}
+
+/* Subtle animations only */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Animation classes - using Tailwind's animation system */
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Utility classes for 8pt grid spacing */
+.space-8pt > * + * {
+  margin-top: 8px;
+}
+
+.space-16pt > * + * {
+  margin-top: 16px;
+}
+
+.space-24pt > * + * {
+  margin-top: 24px;
+}
+
+.space-32pt > * + * {
+  margin-top: 32px;
+}
+
+.space-48pt > * + * {
+  margin-top: 48px;
+}
+
+.space-64pt > * + * {
+  margin-top: 64px;
+}
+
+/* 3D Perspective Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Hide custom cursor on mobile and respect reduced motion */
+@media (max-width: 768px) {
+  [class*="cursor"] {
+    display: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* 3D Background gradient mesh */
+.background-3d {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(124, 58, 237, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
+    linear-gradient(135deg, rgba(248, 249, 252, 0.95) 0%, rgba(240, 244, 248, 0.98) 100%);
+  background-attachment: fixed;
+}
+

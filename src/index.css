@@ -239,6 +239,25 @@ section {
   }
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.1;
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+    opacity: 0.15;
+  }
+  50% {
+    transform: translateY(-40px) translateX(-10px);
+    opacity: 0.2;
+  }
+  75% {
+    transform: translateY(-20px) translateX(5px);
+    opacity: 0.15;
+  }
+}
+
 /* Animation classes - using Tailwind's animation system */
 .animate-fade-in-up {
   animation: fadeInUp 0.5s ease-out forwards;

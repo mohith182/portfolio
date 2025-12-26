@@ -1,10 +1,10 @@
 import { Section } from "@/components/layout/Section";
 import { Button } from "@/components/ui/button";
-import { personalInfo, projects, experiences, skills, certifications } from "@/data/portfolio";
+import { personalInfo, projects, experiences, skills } from "@/data/portfolio";
 import { RevealOnScroll } from "@/components/animations/RevealOnScroll";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Phone, Github, Linkedin, ExternalLink, Calendar, MapPin, Building2, Award, MessageCircle } from "lucide-react";
+import { Mail, Phone, Github, Linkedin, ExternalLink, Calendar, MapPin, Building2, MessageCircle, Code2, Cloud, Cpu } from "lucide-react";
 
 export function Home() {
   const phoneNumber = "(+91) 9360386136";
@@ -18,46 +18,113 @@ export function Home() {
 
   return (
     <div className="min-h-screen bg-[#080808] text-[#E0E0E0] relative overflow-hidden">
-      {/* Green gradient background effect - Trushank Mistry style */}
+      {/* Enhanced Background Effects */}
       <div className="fixed inset-0 pointer-events-none z-0">
+        {/* Animated gradient orbs */}
+        <div 
+          className="absolute top-0 right-0 w-[600px] h-[600px] blur-3xl rounded-full animate-pulse"
+          style={{
+            background: 'radial-gradient(circle, rgba(16,185,129,0.15) 0%, rgba(16,185,129,0.05) 50%, transparent 100%)',
+            animation: 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+          }}
+        />
         <div 
           className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] blur-3xl rounded-full"
           style={{
             background: 'radial-gradient(circle, rgba(16,185,129,0.2) 0%, rgba(16,185,129,0.1) 50%, transparent 100%)'
           }}
         />
+        <div 
+          className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] blur-3xl rounded-full opacity-60"
+          style={{
+            background: 'radial-gradient(circle, rgba(59,130,246,0.1) 0%, rgba(59,130,246,0.05) 50%, transparent 100%)',
+            animation: 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+          }}
+        />
+        
+        {/* Grid pattern overlay */}
+        <div 
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(16,185,129,0.1) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(16,185,129,0.1) 1px, transparent 1px)
+            `,
+            backgroundSize: '50px 50px'
+          }}
+        />
+        
+        {/* Animated mesh gradient */}
+        <div 
+          className="absolute inset-0 opacity-20"
+          style={{
+            background: `
+              radial-gradient(circle at 20% 30%, rgba(16,185,129,0.15) 0%, transparent 50%),
+              radial-gradient(circle at 80% 70%, rgba(59,130,246,0.1) 0%, transparent 50%),
+              radial-gradient(circle at 50% 50%, rgba(139,92,246,0.08) 0%, transparent 50%)
+            `
+          }}
+        />
+        
+        {/* Floating particles effect */}
+        <div className="absolute inset-0">
+          {[...Array(20)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute rounded-full bg-[#10B981] opacity-10"
+              style={{
+                width: `${Math.random() * 4 + 2}px`,
+                height: `${Math.random() * 4 + 2}px`,
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animation: `float ${Math.random() * 20 + 10}s infinite ease-in-out`,
+                animationDelay: `${Math.random() * 5}s`
+              }}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Hero Section */}
-      <Section className="min-h-screen flex items-center pt-20 pb-16 md:pt-32 md:pb-24 relative z-10" enable3D={false}>
-        <RevealOnScroll>
-          <div className="max-w-5xl mx-auto">
-            {/* Headline - Trushank Mistry style */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight text-[#E0E0E0] leading-tight">
-              Hi, I'm {personalInfo.name.split(" ")[0]}. {personalInfo.role}
-            </h1>
-            
-            {/* Sub-headline */}
-            <p className="text-xl md:text-2xl text-[#E0E0E0]/70 mb-12 font-light max-w-3xl">
-              {personalInfo.bio}
-            </p>
-            
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 mb-16">
-              <Button size="lg" className="px-8 py-6 text-base bg-[#10B981] hover:bg-[#10B981]/90 text-white">
-                <a href="/resume.pdf" download>
-                  Download Resume
-                </a>
-              </Button>
-              <Button variant="outline" size="lg" className="px-8 py-6 text-base border-[#10B981]/30 text-[#10B981] hover:bg-[#10B981]/10 hover:border-[#10B981]">
-                <a href="#contact">
-                  Let's Chat
-                </a>
-              </Button>
+      <section className="min-h-screen flex items-center pt-20 relative z-10">
+        {/* Decorative floating icons */}
+        <div className="absolute inset-0 pointer-events-none z-[5] overflow-hidden">
+          <Code2 className="absolute top-20 right-10 w-16 h-16 text-[#10B981]/10 rotate-12 hidden lg:block animate-pulse" />
+          <Cloud className="absolute top-40 right-32 w-12 h-12 text-[#10B981]/10 -rotate-12 hidden lg:block animate-pulse" style={{ animationDelay: '1s' }} />
+          <Cpu className="absolute bottom-40 left-10 w-14 h-14 text-[#10B981]/10 rotate-45 hidden lg:block animate-pulse" style={{ animationDelay: '2s' }} />
+        </div>
+        
+        <div className="max-w-6xl mx-auto px-6 w-full">
+          <RevealOnScroll>
+            <div className="relative z-10">
+              {/* Headline */}
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#E0E0E0] leading-tight">
+                <span className="block">Hi, I'm Mohith — Software Developer,</span>
+                <span className="block">DevOps Engineer & AI Enthusiast.</span>
+              </h1>
+              
+              {/* Description */}
+              <p className="text-base lg:text-lg text-gray-300 leading-relaxed max-w-3xl mt-6">
+                {personalInfo.bio}
+              </p>
+              
+              {/* CTA Buttons */}
+              <div className="flex flex-wrap gap-4 mt-8">
+                <Button size="lg" className="px-8 py-6 text-base font-medium bg-[#10B981] hover:bg-[#10B981]/90 text-white h-auto transition-all duration-200">
+                  <a href="/MOHITH RESUME 2.pdf (1).pdf" download="MOHITH_RESUME.pdf">
+                    Download Resume
+                  </a>
+                </Button>
+                <Button variant="outline" size="lg" className="px-8 py-6 text-base font-medium border-[#10B981]/30 text-[#10B981] hover:bg-[#10B981]/10 hover:border-[#10B981] h-auto transition-all duration-200">
+                  <a href="#contact">
+                    Let's Chat
+                  </a>
+                </Button>
+              </div>
             </div>
-          </div>
-        </RevealOnScroll>
-      </Section>
+          </RevealOnScroll>
+        </div>
+      </section>
 
       {/* Work Experience */}
       <Section title="Work Experience" subtitle="Professional journey" enable3D={false}>
@@ -213,52 +280,6 @@ export function Home() {
                     ))}
                   </div>
                 </CardContent>
-              </Card>
-            </RevealOnScroll>
-          ))}
-        </div>
-      </Section>
-
-      {/* Achievements & Certifications */}
-      <Section title="Achievements" subtitle="Recognition and learning" enable3D={false}>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {certifications.map((cert, index) => (
-            <RevealOnScroll key={cert.id} delay={index * 100}>
-              <Card className="border-[#10B981]/20 bg-[#0a0a0a]/60 backdrop-blur-sm">
-                <CardHeader>
-                  <div className="flex items-start gap-3">
-                    <div className="p-3 rounded-lg bg-[#10B981]/10 border border-[#10B981]/20">
-                      <Award className="h-6 w-6 text-[#10B981]" />
-                    </div>
-                    <div className="flex-1">
-                      <CardTitle className="text-lg mb-2 text-[#E0E0E0]">
-                        {cert.name}
-                      </CardTitle>
-                      <CardDescription className="text-sm mb-3 font-medium text-[#E0E0E0]/70">
-                        {cert.issuer}
-                      </CardDescription>
-                      <div className="flex items-center gap-2 text-xs text-[#E0E0E0]/60 bg-[#10B981]/10 px-2 py-1 rounded-md border border-[#10B981]/20">
-                        <Calendar className="h-3 w-3 text-[#10B981]" />
-                        <span>{cert.issueDate}</span>
-                      </div>
-                    </div>
-                  </div>
-                </CardHeader>
-                {cert.credentialUrl && (
-                  <CardContent>
-                    <Button variant="outline" size="sm" asChild className="w-full border-[#10B981]/30 text-[#10B981] hover:bg-[#10B981]/10">
-                      <a
-                        href={cert.credentialUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2"
-                      >
-                        <ExternalLink className="h-4 w-4" />
-                        View Credential
-                      </a>
-                    </Button>
-                  </CardContent>
-                )}
               </Card>
             </RevealOnScroll>
           ))}

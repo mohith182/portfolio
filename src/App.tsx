@@ -8,6 +8,7 @@ import { Skills } from "@/pages/Skills";
 import { Projects } from "@/pages/Projects";
 import { Experience } from "@/pages/Experience";
 import { Certifications } from "@/pages/Certifications";
+import { Achievements } from "@/pages/Achievements";
 import { Contact } from "@/pages/Contact";
 
 function App() {
@@ -23,7 +24,8 @@ function App() {
             <Route path="/skills" element={<Skills />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/experience" element={<Experience />} />
-            <Route path="/achievements" element={<Certifications />} />
+            <Route path="/achievements" element={<Achievements />} />
+            <Route path="/certifications" element={<Certifications />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

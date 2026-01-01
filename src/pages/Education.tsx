@@ -5,14 +5,14 @@ import { GraduationCap } from "lucide-react";
 export function Education() {
   const education = [
     {
-      degree: "B.Tech Information Technology",
+      degree: "B.E Computer Science",
       institution: "St. Joseph's College of Engineering",
       year: "2024 – 2028",
       location: "Chennai, Tamil Nadu, India",
     },
     {
       degree: "High School",
-      institution: "Alwin International Public Schools",
+      institution: "Alwin Memorial Public School",
       year: "2015 – 2024",
       location: "Chennai, India",
     },

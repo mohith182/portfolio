@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Mail, Phone, Github, Linkedin, ExternalLink, Calendar, MapPin, Building2, MessageCircle, Code2, Cloud, Cpu } from "lucide-react";
 
 export function Home() {
-  const phoneNumber = "(+91) 9360386136";
+  const phoneNumber = "(+91) 8778305963";
   
   // Group skills by category
   const skillsByCategory = {
@@ -96,30 +96,55 @@ export function Home() {
         
         <div className="max-w-6xl mx-auto px-6 w-full">
           <RevealOnScroll>
-            <div className="relative z-10">
-              {/* Headline */}
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#E0E0E0] leading-tight">
-                <span className="block">Hi, I'm Mohith — Software Developer,</span>
-                <span className="block">DevOps Engineer & AI Enthusiast.</span>
-              </h1>
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Text Content */}
+              <div className="order-2 lg:order-1">
+                {/* Headline */}
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#E0E0E0] leading-tight">
+                  <span className="block">Hi, I'm Austin — Full Stack</span>
+                  <span className="block">and DevOps Engineer.</span>
+                </h1>
+                
+                {/* Description */}
+                <p className="text-base lg:text-lg text-gray-300 leading-relaxed max-w-3xl mt-6">
+                  {personalInfo.bio}
+                </p>
+                
+                {/* CTA Buttons */}
+                <div className="flex flex-wrap gap-4 mt-8">
+                  <Button size="lg" className="px-8 py-6 text-base font-medium bg-[#10B981] hover:bg-[#10B981]/90 text-white h-auto transition-all duration-200">
+                    <a href="/AUSTIN_resume.pdf" download="AUSTIN_Resume.pdf">
+                      Download Resume
+                    </a>
+                  </Button>
+                  <Button variant="outline" size="lg" className="px-8 py-6 text-base font-medium border-[#10B981]/30 text-[#10B981] hover:bg-[#10B981]/10 hover:border-[#10B981] h-auto transition-all duration-200">
+                    <a href="#contact">
+                      Let's Chat
+                    </a>
+                  </Button>
+                </div>
+              </div>
               
-              {/* Description */}
-              <p className="text-base lg:text-lg text-gray-300 leading-relaxed max-w-3xl mt-6">
-                {personalInfo.bio}
-              </p>
-              
-              {/* CTA Buttons */}
-              <div className="flex flex-wrap gap-4 mt-8">
-                <Button size="lg" className="px-8 py-6 text-base font-medium bg-[#10B981] hover:bg-[#10B981]/90 text-white h-auto transition-all duration-200">
-                  <a href="/MOHITH RESUME 2.pdf (1).pdf" download="MOHITH_RESUME.pdf">
-                    Download Resume
-                  </a>
-                </Button>
-                <Button variant="outline" size="lg" className="px-8 py-6 text-base font-medium border-[#10B981]/30 text-[#10B981] hover:bg-[#10B981]/10 hover:border-[#10B981] h-auto transition-all duration-200">
-                  <a href="#contact">
-                    Let's Chat
-                  </a>
-                </Button>
+              {/* Photo */}
+              <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+                <RevealOnScroll delay={200}>
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#10B981]/20 to-[#10B981]/5 rounded-3xl blur-2xl transform rotate-6"></div>
+                    <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden border-4 border-[#10B981] shadow-2xl shadow-[#10B981]/20 ring-4 ring-[#10B981]/10">
+                      <img 
+                        src={personalInfo.photoUrl || "/profile-photo.jpg"} 
+                        alt={`${personalInfo.name} - ${personalInfo.role}`}
+                        className="w-full h-full object-cover rounded-3xl"
+                        onError={(e) => {
+                          // Fallback if image doesn't exist
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                        }}
+                      />
+                    </div>
+                    <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[#10B981]/10 rounded-full blur-xl"></div>
+                  </div>
+                </RevealOnScroll>
               </div>
             </div>
           </RevealOnScroll>

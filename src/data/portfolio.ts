@@ -45,17 +45,19 @@ export interface PersonalInfo {
   linkedin: string;
   github: string;
   location?: string;
+  photoUrl?: string;
 }
 
 // Personal Information
 export const personalInfo: PersonalInfo = {
-  name: "Mohith Kumar S",
-  role: "Software Developer, DevOps Engineer & AI Enthusiast",
-  bio: "A Software Development Engineer with a strong focus on DevOps engineering and AI-driven systems. I design and build scalable applications, automate workflows, and deploy reliable cloud-native solutions. Passionate about writing clean code, optimizing systems, and leveraging AI to solve real-world problems efficiently.",
-  email: "mohithkumar4225@gmail.com",
-  linkedin: "https://www.linkedin.com/in/mohith-kumar-446349337",
-  github: "https://github.com/mohith182",
+  name: "Austin Jayaraj.A",
+  role: "Full Stack and DevOps Engineer",
+  bio: "A Full Stack and DevOps Engineer passionate about building end-to-end solutions. I design and develop scalable full-stack applications using React, Node.js, and modern web technologies, while implementing robust DevOps practices with AWS cloud infrastructure, CI/CD pipelines, and automation frameworks. Committed to delivering high-quality, scalable, and reliable solutions.",
+  email: "austinjayaraj282@gmail.com",
+  linkedin: "https://www.linkedin.com/in/austin-jayaraj-a-087200329?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+  github: "https://github.com/Austinjayaraj",
   location: "Chennai, India",
+  photoUrl: "/profile-photo.jpg",
 };
 
 // Skills categorized by type
@@ -109,7 +111,7 @@ export const projects: Project[] = [
     title: "CELLINTEL",
     description: "A law enforcement-grade telecom analysis tool with OSINT integration and interactive network visualizations. Built for comprehensive telecom data analysis with advanced visualization capabilities.",
     techStack: ["React.js", "Node.js", "Python", "PostgreSQL", "D3.js"],
-    githubUrl: "https://github.com/mohith182/cellintel",
+    githubUrl: "https://github.com/Austinjayaraj/cellintel",
     category: "web",
   },
   {
@@ -117,7 +119,7 @@ export const projects: Project[] = [
     title: "ARIS",
     description: "An AI-powered research assistant using Hugging Face and custom LLM pipelines. Leverages advanced language models for intelligent research assistance and document analysis.",
     techStack: ["Python", "Hugging Face", "LLMs", "Flask", "OpenAI API"],
-    githubUrl: "https://github.com/mohith182/aris",
+    githubUrl: "https://github.com/Austinjayaraj/aris",
     category: "ai_ml",
   },
 ];
@@ -180,14 +182,8 @@ export const certifications: Certification[] = [
   },
   {
     id: "4",
-    name: "Python for Data Science (Elite)",
-    issuer: "Data Science Certification",
-    issueDate: "2025",
-  },
-  {
-    id: "5",
-    name: "Cloud Computing 101",
-    issuer: "AWS Educate",
+    name: "Project fest winner 2025",
+    issuer: "Competition",
     issueDate: "2025",
   },
   {
@@ -209,48 +205,6 @@ export const certifications: Certification[] = [
     issueDate: "2025",
   },
   {
-    id: "9",
-    name: "Getting Started with Storage",
-    issuer: "AWS Educate",
-    issueDate: "2025",
-  },
-  {
-    id: "10",
-    name: "Getting Started with Cloud Ops",
-    issuer: "AWS Educate",
-    issueDate: "2025",
-  },
-  {
-    id: "11",
-    name: "Getting Started with Compute",
-    issuer: "AWS Educate",
-    issueDate: "2025",
-  },
-  {
-    id: "12",
-    name: "Getting Started with Security",
-    issuer: "AWS Educate",
-    issueDate: "2025",
-  },
-  {
-    id: "13",
-    name: "Getting Started with Networking",
-    issuer: "AWS Educate",
-    issueDate: "2025",
-  },
-  {
-    id: "14",
-    name: "Getting Started with Serverless",
-    issuer: "AWS Educate",
-    issueDate: "2025",
-  },
-  {
-    id: "15",
-    name: "Getting Started with Databases",
-    issuer: "AWS Educate",
-    issueDate: "2025",
-  },
-  {
     id: "16",
     name: "Introduction to Generative AI",
     issuer: "AWS Educate",
@@ -261,5 +215,54 @@ export const certifications: Certification[] = [
     name: "Machine Learning Foundations",
     issuer: "AWS Educate",
     issueDate: "2025",
+  },
+  {
+    id: "18",
+    name: "HTML5 - The Language",
+    issuer: "Infosys Springboard",
+    issueDate: "2025",
+    credentialUrl: "https://infyspringboard.onwingspan.com/web/en/app/toc/lex 17739732834840810000 shared/overview",
+  },
+  {
+    id: "19",
+    name: "Networking and Web Technology",
+    issuer: "Infosys Springboard",
+    issueDate: "2025",
+    credentialUrl: "https://infyspringboard.onwingspan.com/web/en/app/toc/lex auth 01254512784165273671 shared/overview",
+  },
+  {
+    id: "20",
+    name: "CSS3",
+    issuer: "Infosys Springboard",
+    issueDate: "2025",
+    credentialUrl: "https://infyspringboard.onwingspan.com/web/en/app/toc/lex 15281000932633230000 shared/overview",
+  },
+  {
+    id: "21",
+    name: "JavaScript",
+    issuer: "Infosys Springboard",
+    issueDate: "2025",
+    credentialUrl: "https://infyspringboard.onwingspan.com/web/en/app/toc/lex 18109698366332810000 shared/overview",
+  },
+  {
+    id: "22",
+    name: "Front End Web Developer Certification",
+    issuer: "Infosys Springboard",
+    issueDate: "2025",
+    credentialUrl: "https://infyspringboard.onwingspan.com/web/en/app/toc/lex auth 013951019900878848219 shared/overview",
+  },
+  {
+    id: "23",
+    name: "Frontend web developer Modern HTML CSS JavaScript",
+    issuer: "Infosys Springboard",
+    issueDate: "2025",
+    credentialUrl: "https://infyspringboard.onwingspan.com/web/en/app/toc/lex auth 014157697606279168211/overview#iss=https://infyspringboard.onwingspan.com/auth/realms/infyspringboard",
+  },
+  {
+    id: "24",
+    name: "Fundamentals of Java Programming",
+    issuer: "Infosys Springboard",
+    issueDate: "2025",
+    credentialUrl: "https://infyspringboard.onwingspan.com/web/en/app/toc/lex auth 0142227424199639041546/overview",
   },
 ];

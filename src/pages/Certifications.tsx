@@ -7,7 +7,7 @@ import { RevealOnScroll } from "@/components/animations/RevealOnScroll";
 export function Certifications() {
   // Filter out achievements (hackathons and competitions) - only show certifications
   const certsOnly = certifications.filter(
-    (cert) => cert.id !== "1" && cert.id !== "2" && cert.id !== "3"
+    (cert) => cert.id !== "1" && cert.id !== "2" && cert.id !== "3" && cert.id !== "4"
   );
 
   return (
